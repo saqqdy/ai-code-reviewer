@@ -5,15 +5,58 @@
 [![npm version](https://img.shields.io/npm/v/ai-code-reviewer.svg)](https://www.npmjs.com/package/ai-code-reviewer)
 [![license](https://img.shields.io/npm/l/ai-code-reviewer.svg)](https://github.com/saqqdy/ai-code-reviewer/blob/master/LICENSE)
 
+[中文文档](README_CN.md) | [完整文档](https://ai-code-reviewer.vercel.app)
+
 ---
 
 ## 🎯 The Problem It Solves
+
+Traditional linters catch syntax errors, but miss **semantic issues**:
+
+```typescript
+// Linter: ✅ No syntax errors
+function processUser(input: any) {
+  return input.name.trim()  // Runtime: 💥 if input is null
+}
+```
+
+Questions linters can't answer:
+- Is this business logic correct?
+- Are there security vulnerabilities?
+- Will this cause performance issues?
+- Is this maintainable?
 
 | Scenario | Traditional Linter | AI Code Reviewer |
 |----------|-------------------|------------------|
 | "Is this safe?" | Pattern matching, can't understand context | AI understands business semantics |
 | "How to fix?" | Reports error only | Provides executable fix snippets |
 | "Is it critical?" | Binary pass/fail | 5-tier severity: BLOCKER → SUGGESTION |
+
+---
+
+## ✨ The Solution
+
+AI Code Reviewer uses **semantic understanding** across five dimensions:
+
+| Dimension | Focus | Example Rules |
+|-----------|-------|---------------|
+| **Correctness** | Logic errors, null pointers | COR-001: Null check missing |
+| **Security** | XSS, SQL injection, data leakage | SEC-001: User input unsanitized |
+| **Performance** | N+1 queries, memory leaks | PER-001: Loop inside loop |
+| **Maintainability** | Duplicate code, complexity | MAIN-001: Duplicated logic |
+| **Best Practices** | Framework conventions | BP-001: Vue reactive rules |
+
+## 📊 Five-Tier Severity
+
+Not all issues are equal. AI Code Reviewer classifies by impact:
+
+| Level | Icon | Meaning | Action |
+|-------|------|---------|--------|
+| **BLOCKER** | 🚫 | Must fix, blocks merge | Fix immediately |
+| **HIGH** | 🔴 | Critical, breaks functionality | Fix this iteration |
+| **MEDIUM** | 🟡 | Important, affects quality | Plan to fix |
+| **LOW** | 🟢 | Minor, polish level | Fix later |
+| **SUGGESTION** | 💡 | Optional improvement | Optional |
 
 ---
 
@@ -80,6 +123,99 @@ const diffs = await collectDiff({
 })
 
 const project = await detectProject(process.cwd())
+```
+
+---
+
+## 📋 Example Output
+
+```
+/review main
+
+🔍 Reviewing diff against main...
+
+📁 Project: vue3 (typescript)
+📝 Files changed: 3
+
+📊 Review Summary:
+- Total findings: 12
+- 🚫 Blockers: 1
+- 🔴 High: 3
+- 🟡 Medium: 5
+- 🟢 Low: 2
+- 💡 Suggestions: 1
+
+🚫 Blockers (Must Fix):
+
+- 🚫 **SEC-001** [BLOCKER] `src/auth.ts:45`
+  **XSS vulnerability in user input**
+  
+  User input is directly rendered without sanitization.
+  ```typescript
+  element.innerHTML = userInput  // 💥 Dangerous!
+  ```
+  
+  💡 **Fix**: Sanitize user input before rendering.
+  ```typescript
+  element.textContent = sanitize(userInput)
+  ```
+  
+  Confidence: 🟢 High
+```
+
+---
+
+## ⚙️ Configuration
+
+Create `.ai-code-reviewer.yml` to customize:
+
+```yaml
+rules:
+  enabled:
+    - COR-001  # Null pointer check
+    - SEC-001  # XSS prevention
+    - SEC-002  # SQL injection
+    - PER-001  # N+1 query detection
+  disabled:
+    - STYLE-001  # Naming conventions
+  severityOverrides:
+    SEC-001: BLOCKER  # XSS must fix immediately
+
+excludePaths:
+  - node_modules/
+  - dist/
+  - coverage/
+
+maxFindingsPerFile: 20
+outputFormat: markdown
+```
+
+---
+
+## 🗂️ Project Structure
+
+```
+ai-code-reviewer/
+├── .claude/skills/ai-code-reviewer/  # Claude Code Skill
+├── src/                               # TypeScript source
+│   ├── collectors/                    # Git data collectors
+│   ├── utils/                         # Utilities
+│   └── types.ts                       # Type definitions
+├── docs/                              # VitePress docs
+└── examples/                          # Usage examples
+```
+
+---
+
+## 🛠️ Development
+
+```bash
+pnpm install          # Install dependencies
+pnpm run lint         # ESLint check
+pnpm run typecheck    # TypeScript check
+pnpm run test         # Run tests
+pnpm run build        # Build (ESM + CJS)
+pnpm run docs:dev     # Start docs server
 ```
 
 ---
