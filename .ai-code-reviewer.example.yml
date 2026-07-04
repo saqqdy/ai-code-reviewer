@@ -1,0 +1,22 @@
+rules:
+  enabled:
+    - COR-001  # 空指针检查
+    - SEC-001  # XSS 防护
+    - SEC-002  # SQL 注入
+    - PER-001  # N+1 查询
+    - MAIN-001  # 重复代码检测
+  disabled: []
+  severityOverrides:
+    COR-001: HIGH
+    SEC-001: BLOCKER
+
+excludePaths:
+  - node_modules/
+  - dist/
+  - coverage/
+  - vendor/
+  - .git/
+
+maxFindingsPerFile: 20
+outputFormat: markdown
+targetBranch: main
