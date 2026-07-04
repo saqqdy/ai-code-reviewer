@@ -4,6 +4,9 @@
  * Exports all public APIs
  */
 
+// Analyzers
+export { analyzeCode, analyzeDiffs, getAvailableRules } from './analyzers'
+
 // Collectors
 export { collectCommitDiff, collectDiff } from './collectors/diff-collector'
 
