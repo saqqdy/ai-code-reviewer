@@ -38,7 +38,7 @@ Output:
 ## Using the API
 
 ```typescript
-import { collectDiff, detectProject } from 'ai-code-reviewer'
+import { collectDiff, detectProject } from 'ai-code-reviewer-plus'
 
 const project = await detectProject(process.cwd())
 console.log(`Framework: ${project.framework}`)
@@ -51,11 +51,11 @@ console.log(`Files changed: ${diffs.length}`)
 
 ```bash
 # Review diff
-npx ai-code-reviewer review --branch main
+npx ai-code-reviewer-plus review --branch main
 
 # Review single file
-npx ai-code-reviewer review-file src/index.ts
+npx ai-code-reviewer-plus review-file src/index.ts
 
 # Review commit
-npx ai-code-reviewer review-commit abc1234
+npx ai-code-reviewer-plus review-commit abc1234
 ```

@@ -1,9 +1,9 @@
-# 🚀 AI Code Reviewer
+# 🚀 AI Code Reviewer Plus
 
 > AI-powered intelligent code reviewer — multi-dimensional semantic analysis, five-tier severity classification, actionable fix suggestions via Claude Code Skill.
 
-[![npm version](https://img.shields.io/npm/v/ai-code-reviewer.svg)](https://www.npmjs.com/package/ai-code-reviewer)
-[![license](https://img.shields.io/npm/l/ai-code-reviewer.svg)](https://github.com/saqqdy/ai-code-reviewer/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/ai-code-reviewer-plus.svg)](https://www.npmjs.com/package/ai-code-reviewer-plus)
+[![license](https://img.shields.io/npm/l/ai-code-reviewer-plus.svg)](https://github.com/saqqdy/ai-code-reviewer-plus/blob/master/LICENSE)
 
 ## Quick Links
 
@@ -55,14 +55,14 @@ AI Code Reviewer uses **semantic understanding** across five dimensions:
 
 ```bash
 # Claude Code Plugin (Recommended)
-/plugin marketplace add saqqdy/ai-code-reviewer
-/plugin install ai-code-reviewer
+/plugin marketplace add saqqdy/ai-code-reviewer-plus
+/plugin install ai-code-reviewer-plus
 
 # CLI (Zero-Install)
-npx ai-code-reviewer review --branch main
+npx ai-code-reviewer-plus review --branch main
 
 # NPM Package
-pnpm add ai-code-reviewer
+pnpm add ai-code-reviewer-plus
 ```
 
 ## Project Status

@@ -5,7 +5,7 @@
 ## 用法
 
 ```typescript
-import { detectProject } from 'ai-code-reviewer'
+import { detectProject } from 'ai-code-reviewer-plus'
 
 const project = await detectProject(process.cwd())
 ```

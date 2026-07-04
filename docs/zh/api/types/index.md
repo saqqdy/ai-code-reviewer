@@ -20,5 +20,5 @@ import type {
   ReviewFinding,
   ReviewerConfig,
   SeverityLevel,
-} from 'ai-code-reviewer'
+} from 'ai-code-reviewer-plus'
 ```

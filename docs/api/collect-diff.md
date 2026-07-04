@@ -5,7 +5,7 @@ Parse `git diff` output into structured data.
 ## Usage
 
 ```typescript
-import { collectDiff } from 'ai-code-reviewer'
+import { collectDiff } from 'ai-code-reviewer-plus'
 
 const diffs = await collectDiff({
   root: process.cwd(),

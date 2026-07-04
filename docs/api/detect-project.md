@@ -5,7 +5,7 @@ Detect project type and framework from filesystem markers.
 ## Usage
 
 ```typescript
-import { detectProject } from 'ai-code-reviewer'
+import { detectProject } from 'ai-code-reviewer-plus'
 
 const project = await detectProject(process.cwd())
 ```

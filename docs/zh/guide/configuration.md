@@ -1,6 +1,6 @@
 # 配置
 
-创建 `.ai-code-reviewer.yml` 自定义规则。
+创建 `.ai-code-reviewer-plus.yml` 自定义规则。
 
 ## 配置示例
 

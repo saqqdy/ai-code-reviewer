@@ -1,6 +1,6 @@
 # Configuration
 
-Create `.ai-code-reviewer.yml` to customize rules.
+Create `.ai-code-reviewer-plus.yml` to customize rules.
 
 ## Example Configuration
 

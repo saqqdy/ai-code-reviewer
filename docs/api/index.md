@@ -12,14 +12,14 @@ Complete TypeScript/Node.js API for AI Code Reviewer.
 | [`formatFinding()`](/api/format-finding) | Format finding as Markdown | `string` |
 | [`formatReviewReport()`](/api/format-finding) | Generate full Markdown report | `string` |
 | [`mergeConfig()`](/api/format-finding) | Merge user config with defaults | `ReviewerConfig` |
-| [`loadConfigFile()`](/api/format-finding) | Load `.ai-code-reviewer.yml` | `Partial<ReviewerConfig>` |
+| [`loadConfigFile()`](/api/format-finding) | Load `.ai-code-reviewer-plus.yml` | `Partial<ReviewerConfig>` |
 
 ## Common Patterns
 
 ### Basic Diff Collection
 
 ```typescript
-import { collectDiff, detectProject } from 'ai-code-reviewer'
+import { collectDiff, detectProject } from 'ai-code-reviewer-plus'
 
 const diffs = await collectDiff({
   root: process.cwd(),
@@ -36,7 +36,7 @@ for (const diff of diffs) {
 ### Project Detection
 
 ```typescript
-import { detectProject } from 'ai-code-reviewer'
+import { detectProject } from 'ai-code-reviewer-plus'
 
 const project = await detectProject(process.cwd())
 
@@ -49,7 +49,7 @@ console.log(`Package Manager: ${project.packageManager || 'N/A'}`)
 ### Configuration Management
 
 ```typescript
-import { mergeConfig, loadConfigFile } from 'ai-code-reviewer'
+import { mergeConfig, loadConfigFile } from 'ai-code-reviewer-plus'
 
 const userConfig = loadConfigFile(process.cwd())
 const config = mergeConfig(userConfig)
@@ -61,7 +61,7 @@ console.log(`Excluded paths: ${config.excludePaths.length}`)
 ## Error Handling
 
 ```typescript
-import { GitCommandError, ConfigError } from 'ai-code-reviewer'
+import { GitCommandError, ConfigError } from 'ai-code-reviewer-plus'
 
 try {
   const diffs = await collectDiff({ root, targetBranch })
@@ -85,7 +85,7 @@ import type {
   ReviewerConfig,
   ReviewFinding,
   SeverityLevel,
-} from 'ai-code-reviewer'
+} from 'ai-code-reviewer-plus'
 ```
 
 See [Types](/api/types/) for detailed type definitions.

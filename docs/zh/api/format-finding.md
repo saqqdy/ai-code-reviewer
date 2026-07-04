@@ -5,8 +5,8 @@
 ## 用法
 
 ```typescript
-import { formatFinding } from 'ai-code-reviewer'
-import type { ReviewFinding } from 'ai-code-reviewer'
+import { formatFinding } from 'ai-code-reviewer-plus'
+import type { ReviewFinding } from 'ai-code-reviewer-plus'
 
 const finding: ReviewFinding = {
   ruleId: 'SEC-001',

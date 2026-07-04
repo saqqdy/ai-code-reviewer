@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  base: '/ai-code-reviewer/',
+  base: '/ai-code-reviewer-plus/',
   head: [
     ['meta', { name: 'theme-color', content: '#6366f1' }],
   ],
@@ -14,7 +14,7 @@ export default defineConfig({
         darkModeSwitchLabel: 'Theme',
         docFooter: { next: 'Next', prev: 'Previous' },
         editLink: {
-          pattern: 'https://github.com/saqqdy/ai-code-reviewer/edit/master/docs/:path',
+          pattern: 'https://github.com/saqqdy/ai-code-reviewer-plus-plus/edit/master/docs/:path',
           text: 'Edit this page on GitHub',
         },
         footer: { copyright: 'Copyright © 2024-present saqqdy', message: 'MIT License' },
@@ -23,8 +23,8 @@ export default defineConfig({
           { activeMatch: '/guide/', link: '/guide/', text: 'Guide' },
           { activeMatch: '/api/', link: '/api/', text: 'API' },
           { items: [
-            { link: 'https://github.com/saqqdy/ai-code-reviewer', text: 'GitHub' },
-            { link: 'https://www.npmjs.com/package/ai-code-reviewer', text: 'NPM' },
+            { link: 'https://github.com/saqqdy/ai-code-reviewer-plus', text: 'GitHub' },
+            { link: 'https://www.npmjs.com/package/ai-code-reviewer-plus', text: 'NPM' },
           ], text: 'Links' },
         ],
         outline: { label: 'On this page' },
@@ -56,7 +56,7 @@ export default defineConfig({
           ],
         },
       },
-      title: 'AI Code Reviewer',
+      title: "AI Code Reviewer Plus",
     },
     zh: {
       description: 'AI 智能代码审查 — 多维度语义分析，五级严重性分类，可执行的修复建议',
@@ -67,7 +67,7 @@ export default defineConfig({
         darkModeSwitchLabel: '主题',
         docFooter: { next: '下一页', prev: '上一页' },
         editLink: {
-          pattern: 'https://github.com/saqqdy/ai-code-reviewer/edit/master/docs/:path',
+          pattern: 'https://github.com/saqqdy/ai-code-reviewer-plus-plus/edit/master/docs/:path',
           text: '在 GitHub 上编辑此页',
         },
         footer: { copyright: '版权所有 © 2024-present saqqdy', message: '基于 MIT 许可发布' },
@@ -76,8 +76,8 @@ export default defineConfig({
           { activeMatch: '/zh/guide/', link: '/zh/guide/', text: '指南' },
           { activeMatch: '/zh/api/', link: '/zh/api/', text: 'API' },
           { items: [
-            { link: 'https://github.com/saqqdy/ai-code-reviewer', text: 'GitHub' },
-            { link: 'https://www.npmjs.com/package/ai-code-reviewer', text: 'NPM' },
+            { link: 'https://github.com/saqqdy/ai-code-reviewer-plus', text: 'GitHub' },
+            { link: 'https://www.npmjs.com/package/ai-code-reviewer-plus', text: 'NPM' },
           ], text: '链接' },
         ],
         outline: { label: '页面导航' },
@@ -109,14 +109,14 @@ export default defineConfig({
           ],
         },
       },
-      title: 'AI Code Reviewer',
+      title: "AI Code Reviewer Plus",
     },
   },
-  sitemap: { hostname: 'https://saqqdy.github.io/ai-code-reviewer' },
+  sitemap: { hostname: 'https://saqqdy.github.io/ai-code-reviewer-plus' },
   themeConfig: {
     logo: '/logo.svg',
     search: { provider: 'local' },
     siteTitle: 'AI Code Reviewer',
-    socialLinks: [{ icon: 'github', link: 'https://github.com/saqqdy/ai-code-reviewer' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/saqqdy/ai-code-reviewer-plus' }],
   },
 })

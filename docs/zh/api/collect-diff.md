@@ -5,7 +5,7 @@
 ## 用法
 
 ```typescript
-import { collectDiff } from 'ai-code-reviewer'
+import { collectDiff } from 'ai-code-reviewer-plus'
 
 const diffs = await collectDiff({
   root: process.cwd(),

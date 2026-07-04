@@ -1,9 +1,9 @@
-# 🚀 AI Code Reviewer
+# 🚀 AI Code Reviewer Plus
 
 > AI 智能代码审查 — 多维度语义分析，五级严重性分类，可执行的修复建议
 
-[![npm version](https://img.shields.io/npm/v/ai-code-reviewer.svg)](https://www.npmjs.com/package/ai-code-reviewer)
-[![license](https://img.shields.io/npm/l/ai-code-reviewer.svg)](https://github.com/saqqdy/ai-code-reviewer/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/ai-code-reviewer-plus.svg)](https://www.npmjs.com/package/ai-code-reviewer-plus)
+[![license](https://img.shields.io/npm/l/ai-code-reviewer-plus.svg)](https://github.com/saqqdy/ai-code-reviewer-plus/blob/master/LICENSE)
 
 ## 快速链接
 
@@ -49,14 +49,14 @@ AI Code Reviewer 通过**语义理解**在五个维度分析代码：
 
 ```bash
 # Claude Code 插件（推荐）
-/plugin marketplace add saqqdy/ai-code-reviewer
-/plugin install ai-code-reviewer
+/plugin marketplace add saqqdy/ai-code-reviewer-plus
+/plugin install ai-code-reviewer-plus
 
 # CLI（零安装）
-npx ai-code-reviewer review --branch main
+npx ai-code-reviewer-plus review --branch main
 
 # NPM 包
-pnpm add ai-code-reviewer
+pnpm add ai-code-reviewer-plus
 ```
 
 ## 项目状态

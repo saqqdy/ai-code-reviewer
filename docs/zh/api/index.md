@@ -12,14 +12,14 @@ AI Code Reviewer 的完整 TypeScript/Node.js API。
 | [`formatFinding()`](/zh/api/format-finding) | 格式化单个发现为 Markdown | `string` |
 | [`formatReviewReport()`](/zh/api/format-finding) | 生成完整 Markdown 报告 | `string` |
 | [`mergeConfig()`](/zh/api/format-finding) | 合并用户配置与默认配置 | `ReviewerConfig` |
-| [`loadConfigFile()`](/zh/api/format-finding) | 加载 `.ai-code-reviewer.yml` | `Partial<ReviewerConfig>` |
+| [`loadConfigFile()`](/zh/api/format-finding) | 加载 `.ai-code-reviewer-plus.yml` | `Partial<ReviewerConfig>` |
 
 ## 常用模式
 
 ### 基础 Diff 采集
 
 ```typescript
-import { collectDiff, detectProject } from 'ai-code-reviewer'
+import { collectDiff, detectProject } from 'ai-code-reviewer-plus'
 
 const diffs = await collectDiff({
   root: process.cwd(),
@@ -36,7 +36,7 @@ for (const diff of diffs) {
 ### 项目检测
 
 ```typescript
-import { detectProject } from 'ai-code-reviewer'
+import { detectProject } from 'ai-code-reviewer-plus'
 
 const project = await detectProject(process.cwd())
 
@@ -49,7 +49,7 @@ console.log(`包管理器: ${project.packageManager || '无'}`)
 ### 配置管理
 
 ```typescript
-import { mergeConfig, loadConfigFile } from 'ai-code-reviewer'
+import { mergeConfig, loadConfigFile } from 'ai-code-reviewer-plus'
 
 const userConfig = loadConfigFile(process.cwd())
 const config = mergeConfig(userConfig)
@@ -61,7 +61,7 @@ console.log(`排除路径: ${config.excludePaths.length}`)
 ## 错误处理
 
 ```typescript
-import { GitCommandError, ConfigError } from 'ai-code-reviewer'
+import { GitCommandError, ConfigError } from 'ai-code-reviewer-plus'
 
 try {
   const diffs = await collectDiff({ root, targetBranch })
@@ -85,7 +85,7 @@ import type {
   ReviewerConfig,
   ReviewFinding,
   SeverityLevel,
-} from 'ai-code-reviewer'
+} from 'ai-code-reviewer-plus'
 ```
 
 详见 [类型定义](/zh/api/types/)。

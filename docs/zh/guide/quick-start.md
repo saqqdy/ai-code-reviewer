@@ -38,7 +38,7 @@
 ## 使用 API
 
 ```typescript
-import { collectDiff, detectProject } from 'ai-code-reviewer'
+import { collectDiff, detectProject } from 'ai-code-reviewer-plus'
 
 const project = await detectProject(process.cwd())
 console.log(`框架: ${project.framework}`)
@@ -51,11 +51,11 @@ console.log(`变更文件: ${diffs.length}`)
 
 ```bash
 # 审查 diff
-npx ai-code-reviewer review --branch main
+npx ai-code-reviewer-plus review --branch main
 
 # 审查单个文件
-npx ai-code-reviewer review-file src/index.ts
+npx ai-code-reviewer-plus review-file src/index.ts
 
 # 审查 commit
-npx ai-code-reviewer review-commit abc1234
+npx ai-code-reviewer-plus review-commit abc1234
 ```
